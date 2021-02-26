@@ -1,13 +1,16 @@
 /* our application's code */
 
-#include "spdlog/spdlog.h"
+#include "log.h"
 
 int main() {
-  spdlog::info("Hello World!");
-  spdlog::warn("Warnining");
-  spdlog::debug("Debug");
-  spdlog::error("Error");
-  spdlog::critical("Critical");
+   Hazel::Log::Init();
+
+   HZ_TRACE("Trace!");
+   HZ_INFO("Info!");
+   HZ_WARN("Warn!");
+   HZ_DEBUG("Debug!");
+   HZ_ERROR("Error!");
+   HZ_CRITICAL("Critical!");
    
   class Entity {
 
