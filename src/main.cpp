@@ -31,7 +31,8 @@ int main() {
     a.m_Weapons.push_back(new AssaultRifle(2,300));
 
     for (std::vector<Weapon*>::iterator it = a.m_Weapons.begin(); it != a.m_Weapons.end(); it++) {
-        std::cout << (*it) << std::endl;
+        // std::cout << (*it) << std::endl;
+        DEBUG((*it));
     }
 
 }
