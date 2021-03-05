@@ -5,7 +5,24 @@
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 
-namespace Hazel {
+namespace Global {
+
+// Core Log macros
+#define CORE_TRACE(...)    ::Global::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define CORE_INFO(...)     ::Global::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define CORE_WARN(...)     ::Global::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define CORE_DEBUG(...)    ::Global::Log::GetCoreLogger()->debug(__VA_ARGS__)
+#define CORE_ERROR(...)    ::Global::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define CORE_CRITICAL(...) ::Global::Log::GetCoreLogger()->critical(__VA_ARGS__)
+
+// Client Log macros
+#define TRACE(...)    ::Global::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define INFO(...)     ::Global::Log::GetClientLogger()->info(__VA_ARGS__)
+#define WARN(...)     ::Global::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define DEBUG(...)    ::Global::Log::GetClientLogger()->debug(__VA_ARGS__)
+#define ERROR(...)    ::Global::Log::GetClientLogger()->error(__VA_ARGS__)
+#define CRITICAL(...) ::Global::Log::GetClientLogger()->critical(__VA_ARGS__)
+
 
   class Log
   {
@@ -20,21 +37,5 @@ namespace Hazel {
 
   };
 }
-
-// Core Log macros
-#define HZ_CORE_TRACE(...) ::Hazel::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define HZ_CORE_INFO(...)  ::Hazel::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define HZ_CORE_WARN(...)  ::Hazel::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define HZ_CORE_DEBUG(...) ::Hazel::Log::GetCoreLogger()->debug(__VA_ARGS__)
-#define HZ_CORE_ERROR(...) ::Hazel::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define HZ_CORE_CRITICAL(...) ::Hazel::Log::GetCoreLogger()->critical(__VA_ARGS__)
-
-// Client Log macros
-#define HZ_TRACE(...) ::Hazel::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define HZ_INFO(...)  ::Hazel::Log::GetClientLogger()->info(__VA_ARGS__)
-#define HZ_WARN(...)  ::Hazel::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define HZ_DEBUG(...)  ::Hazel::Log::GetClientLogger()->debug(__VA_ARGS__)
-#define HZ_ERROR(...) ::Hazel::Log::GetClientLogger()->error(__VA_ARGS__)
-#define HZ_CRITICAL(...) ::Hazel::Log::GetClientLogger()->critical(__VA_ARGS__)
 
 

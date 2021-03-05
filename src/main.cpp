@@ -1,24 +1,37 @@
 /* our application's code */
 
+#include <sstream>
+#include <vector>
+#include <iostream>
+
 #include "log.h"
+#include "Avatar.h"
+#include "AssaultRifle.h"
 
 int main() {
-   Hazel::Log::Init();
+   Global::Log::Init();
 
-   HZ_TRACE("Trace!");
-   HZ_INFO("Info!");
-   HZ_WARN("Warn!");
-   HZ_DEBUG("Debug!");
-   HZ_ERROR("Error!");
-   HZ_CRITICAL("Critical!");
-   
-  class Entity {
+   CORE_TRACE("Trace!");
+   CORE_INFO("Info!");
+   CORE_WARN("Warn!");
+   CORE_DEBUG("Debug!");
+   CORE_ERROR("Error!");
+   CORE_CRITICAL("Critical!");
 
-    public:
-      float X, Y;
-  };
+   TRACE("Trace!");
+   INFO("Info!");
+   WARN("Warn!");
+   DEBUG("Debug!");
+   ERROR("Error!");
+   CRITICAL("Critical!");
 
-  Entity e;
-  
-  e.X=1;
+   Avatar a;
+    AssaultRifle* Rifle = new AssaultRifle(1,300);
+    a.m_Weapons.push_back(Rifle);
+    a.m_Weapons.push_back(new AssaultRifle(2,300));
+
+    for (std::vector<Weapon*>::iterator it = a.m_Weapons.begin(); it != a.m_Weapons.end(); it++) {
+        std::cout << (*it) << std::endl;
+    }
+
 }
