@@ -1,12 +1,14 @@
 #pragma once
 
 #include <vector>
+#include <string>
 #include "Weapon.h"
 #include "log.h"
 
 class Avatar
 {
 public:
+    Avatar ( std::string name ) : m_AvatarName (name) {}
     inline void AddWeapon (Weapon* weaponPtr) { m_Weapons.push_back(weaponPtr); };
 
     void Weapons() {
@@ -24,5 +26,6 @@ public:
     }
 
 private:
+    std::string m_AvatarName;
     std::vector <Weapon*> m_Weapons;
 };

@@ -26,7 +26,7 @@ int main() {
    ERROR("Error!");
    CRITICAL("Critical!");
 
-   Avatar a;
+   Avatar a("Hero");
     AssaultRifle* Rifle = new AssaultRifle(3,300);
     a.AddWeapon(Rifle);
     a.AddWeapon(new HandGun(2,14));
