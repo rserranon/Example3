@@ -7,6 +7,7 @@
 #include "log.h"
 #include "Avatar.h"
 #include "AssaultRifle.h"
+#include "HandGun.h"
 
 int main() {
    Global::Log::Init();
@@ -26,9 +27,9 @@ int main() {
    CRITICAL("Critical!");
 
    Avatar a;
-    AssaultRifle* Rifle = new AssaultRifle(1,300);
+    AssaultRifle* Rifle = new AssaultRifle(3,300);
     a.m_Weapons.push_back(Rifle);
-    a.m_Weapons.push_back(new AssaultRifle(2,300));
+    a.m_Weapons.push_back(new HandGun(2,14));
 
     for (std::vector<Weapon*>::iterator it = a.m_Weapons.begin(); it != a.m_Weapons.end(); it++) {
         // std::cout << (*it) << std::endl;
