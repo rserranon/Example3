@@ -8,6 +8,7 @@
 #include "Avatar.h"
 #include "AssaultRifle.h"
 #include "HandGun.h"
+#include "Sword.h"
 
 int main() {
    Global::Log::Init();
@@ -27,9 +28,9 @@ int main() {
    CRITICAL("Critical!");
 
    Avatar a("Hero");
-    AssaultRifle* Rifle = new AssaultRifle(3,300);
+    AssaultRifle* Rifle = new AssaultRifle(3,50);
     a.AddWeapon(Rifle);
     a.AddWeapon(new HandGun(2,14));
-    a.AddWeapon( new AssaultRifle(2,500) );
+    a.AddWeapon( new Sword() );
     a.Weapons();
 }
